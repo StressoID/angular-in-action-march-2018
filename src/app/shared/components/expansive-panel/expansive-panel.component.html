@@ -1,0 +1,16 @@
+<mat-card class="expansive-panel">
+  <mat-card-header>
+    <a (click)="toggle()">
+      <mat-card-title>
+        <ng-content select="[header]"></ng-content>
+        <mat-icon *ngIf="contentFlag; else elseBlock">keyboard_arrow_up</mat-icon>
+        <ng-template #elseBlock>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </ng-template>
+      </mat-card-title>
+    </a>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-content *ngIf="contentFlag" select="[content]"></ng-content>
+  </mat-card-content>
+</mat-card>
