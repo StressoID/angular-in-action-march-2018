@@ -7,6 +7,8 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyFirstModule} from './my-first/my-first.module';
 import {CoreModule} from './core/core.module';
+import {SharedModule} from './shared/shared.module';
+import {LoadButtonComponent} from './shared/components/load-button/load-button.component';
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import {CoreModule} from './core/core.module';
     BrowserAnimationsModule,
     CoreModule,
     MyFirstModule,
+    SharedModule,
     AppRoutingModule
   ],
   providers: [],

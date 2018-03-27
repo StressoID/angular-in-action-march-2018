@@ -1,4 +1,18 @@
 <mat-card>
   Мое первое не совсем интересное приложение :(
 </mat-card>
-<app-my-first></app-my-first>
+
+<app-expansive-panel>
+  <span header>Кастомный тайты</span>
+  <div content>
+    <app-load-button
+      (value)="changeColor($event)"
+      [disabled]="count > 10"
+      [title]="'Кастомная кнопка'"
+      [color]="someColor">
+    </app-load-button>
+  </div>
+</app-expansive-panel>
+
+
+<button mat-raised-button (click)="openModal()">Открыть модальное окно</button>
