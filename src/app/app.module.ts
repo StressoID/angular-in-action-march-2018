@@ -5,10 +5,11 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MyFirstModule} from './my-first/my-first.module';
 import {CoreModule} from './core/core.module';
 import {SharedModule} from './shared/shared.module';
-import {LoadButtonComponent} from './shared/components/load-button/load-button.component';
+import {CategoriesModule} from './categories/categories.module';
+import {LoginModule} from './login/login.module';
+import {AuthGuard} from './core/auth.guard';
 
 
 @NgModule({
@@ -19,11 +20,12 @@ import {LoadButtonComponent} from './shared/components/load-button/load-button.c
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
-    MyFirstModule,
+    LoginModule,
+    CategoriesModule,
     SharedModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

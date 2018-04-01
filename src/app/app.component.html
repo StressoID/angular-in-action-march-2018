@@ -1,7 +1,9 @@
+<mat-toolbar color="primary">
+  <app-navigation></app-navigation>
+</mat-toolbar>
 <mat-card>
-  Мое первое не совсем интересное приложение :(
+  <router-outlet></router-outlet>
 </mat-card>
-
 <app-expansive-panel>
   <span header>Кастомный тайты</span>
   <div content>
@@ -13,6 +15,4 @@
     </app-load-button>
   </div>
 </app-expansive-panel>
-
-
 <button mat-raised-button (click)="openModal()">Открыть модальное окно</button>
