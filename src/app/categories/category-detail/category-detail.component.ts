@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Category} from '../category.interface';
-import {categories} from '../categories.enum';
 import {ActivatedRoute} from '@angular/router';
+import {CategoriesService} from '../categories.service';
 
 @Component({
   selector: 'app-category-detail',
@@ -10,10 +10,12 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CategoryDetailComponent implements OnInit {
 
-  public categories: Category[] = categories;
+  public categories: Category[];
   public category: Category;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private categoriesService: CategoriesService) {
+    this.categories = this.categoriesService.categories;
+  }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {

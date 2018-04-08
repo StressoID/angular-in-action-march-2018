@@ -1,5 +1,12 @@
 <div>
   <ng-container *ngFor="let product of products">
-    <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
+    <a class="product-link" [routerLink]="['/product', product.id]" appIphoneDetector [phone]="product.name">
+      {{ product.name }}
+      {{ product.createdDate | date:'shortDate' }}
+    </a>
+    <a class="product-link" [routerLink]="['/product', product.id]" *appIphoneDetectorStructure="product.name">
+      {{ product.name }}
+      {{ product.createdDate | date:'shortDate' }}
+    </a>
   </ng-container>
 </div>

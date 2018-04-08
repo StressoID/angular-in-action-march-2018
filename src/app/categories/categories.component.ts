@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Category} from './category.interface';
-import {categories} from './categories.enum';
+import {CategoriesService} from './categories.service';
 
 @Component({
   selector: 'app-categories',
@@ -9,10 +9,17 @@ import {categories} from './categories.enum';
 })
 export class CategoriesComponent implements OnInit {
 
-  public categories: Category[] = categories;
+  public categories: Category[];
+  public testCat: boolean;
 
-  constructor() { }
+  constructor(private categoriesService: CategoriesService) {
+    this.categories = this.categoriesService.categories;
+  }
 
   ngOnInit() { }
+
+  clickCount() {
+    this.categoriesService.count();
+  }
 
 }

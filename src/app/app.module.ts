@@ -10,6 +10,8 @@ import {SharedModule} from './shared/shared.module';
 import {CategoriesModule} from './categories/categories.module';
 import {LoginModule} from './login/login.module';
 import {AuthGuard} from './core/auth.guard';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpService} from './http.service';
 
 
 @NgModule({
@@ -19,13 +21,14 @@ import {AuthGuard} from './core/auth.guard';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     CoreModule,
     LoginModule,
     CategoriesModule,
     SharedModule,
     AppRoutingModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

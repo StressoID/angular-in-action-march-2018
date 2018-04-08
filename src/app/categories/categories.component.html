@@ -3,4 +3,9 @@
     <a [routerLink]="[category.id]">{{ category.name }}</a>
   </ng-container>
 </div>
+
+<button (click)="clickCount()">Каунт клик</button>
+<button (click)="testCat = !testCat">Клик</button>
+<app-test-cat *ngIf="testCat"></app-test-cat>
+
 <router-outlet></router-outlet>
