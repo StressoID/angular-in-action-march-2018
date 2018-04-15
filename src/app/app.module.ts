@@ -12,11 +12,13 @@ import {LoginModule} from './login/login.module';
 import {AuthGuard} from './core/auth.guard';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpService} from './http.service';
+import { MyObservableComponent } from './my-observable/my-observable.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyObservableComponent
   ],
   imports: [
     BrowserModule,

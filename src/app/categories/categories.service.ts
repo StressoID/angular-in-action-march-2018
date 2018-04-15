@@ -1,18 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Category} from './category.interface';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class CategoriesService {
-
-  public counter = 0;
-
-  get categories(): Category[] {
-    return this._categories;
-  }
-
-  set categories(value: Category[]) {
-    this._categories = value;
-  }
 
   private _categories: Category[] = [
     {name: 'Phones', id: 1, description: 'Super duper phones'},
@@ -20,13 +11,21 @@ export class CategoriesService {
     {name: 'Computers', id: 3, description: 'Super duper computers'},
   ];
 
-  constructor() {
-    console.log('categories service');
+  public categories$: Subject<Category> = new Subject();
+
+  constructor() {}
+
+  get() {
+    this._categories.forEach(el => this.categories$.next(el));
+    this.add({
+      name: 'Games',
+      id: 4,
+      description: 'PS, Xbox, PC'
+    });
   }
 
-  count() {
-    this.counter += 1;
-    console.log(this.counter);
+  add(category: Category) {
+    this.categories$.next(category);
   }
 
 }

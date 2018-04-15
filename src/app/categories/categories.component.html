@@ -1,11 +1,8 @@
 <div>
-  <ng-container *ngFor="let category of categories">
+  <ng-container *ngFor="let category of categories$ | async">
     <a [routerLink]="[category.id]">{{ category.name }}</a>
+    <span>{{category.description}}</span>
   </ng-container>
 </div>
-
-<button (click)="clickCount()">Каунт клик</button>
-<button (click)="testCat = !testCat">Клик</button>
-<app-test-cat *ngIf="testCat"></app-test-cat>
 
 <router-outlet></router-outlet>
