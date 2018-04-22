@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import {MatDialog} from '@angular/material';
-import {LoadButtonComponent} from './shared/components/load-button/load-button.component';
 import {ModalContentComponent} from './shared/components/modal-content/modal-content.component';
+import {products} from './products/products.enum';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,7 @@ export class AppComponent implements OnDestroy {
   public someColor: string;
   private COLORS = ['primary', 'accent', 'warn'];
   public count = 1;
+  public products = products;
 
   ngOnDestroy(): void { }
 

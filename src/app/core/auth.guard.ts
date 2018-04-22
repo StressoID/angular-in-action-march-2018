@@ -5,6 +5,6 @@ import {CanLoad, Route} from '@angular/router';
 @Injectable()
 export class AuthGuard implements CanLoad {
   canLoad(route: Route): Observable<boolean> | Promise<boolean> | boolean {
-    return !!localStorage.getItem('username');
+    return !!localStorage.getItem('name');
   }
 }

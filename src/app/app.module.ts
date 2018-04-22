@@ -13,17 +13,21 @@ import {AuthGuard} from './core/auth.guard';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpService} from './http.service';
 import { MyObservableComponent } from './my-observable/my-observable.component';
+import { MyFormComponent } from './my-form/my-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyObservableComponent
+    MyObservableComponent,
+    MyFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     CoreModule,
     LoginModule,
     CategoriesModule,

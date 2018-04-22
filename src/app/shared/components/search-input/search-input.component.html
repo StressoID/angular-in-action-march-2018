@@ -1,0 +1,10 @@
+<div>
+  <mat-input-container>
+    <input matInput [formControl]="search" [placeholder]="placeholder">
+  </mat-input-container>
+  <mat-card *ngIf="results.length > 0">
+    <div *ngFor="let result of results">
+      {{result.name}}
+    </div>
+  </mat-card>
+</div>

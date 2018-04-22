@@ -1,0 +1,14 @@
+<form [formGroup]="myForm" (submit)="submit()">
+  <mat-form-field>
+    <input matInput placeholder="Имя" formControlName="name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Фамилия" formControlName="surname">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="СНИЛС" formControlName="snils">
+  </mat-form-field>
+  <button mat-raised-button>
+    Проверить
+  </button>
+</form>

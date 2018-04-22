@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    localStorage.setItem('username', this.username.value);
+    localStorage.setItem('username', this.name.value);
   }
 
 }

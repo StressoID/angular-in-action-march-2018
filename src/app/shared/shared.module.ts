@@ -7,11 +7,14 @@ import {ExpansivePanelComponent} from './components/expansive-panel/expansive-pa
 import {ModalContentComponent} from './components/modal-content/modal-content.component';
 import {NavigationComponent} from './components/navigation/navigation.component';
 import {RouterModule} from '@angular/router';
+import { SearchInputComponent } from './components/search-input/search-input.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
     CoreModule
   ],
   declarations: [
@@ -19,14 +22,16 @@ import {RouterModule} from '@angular/router';
     LoadButtonComponent,
     ExpansivePanelComponent,
     ModalContentComponent,
-    NavigationComponent
+    NavigationComponent,
+    SearchInputComponent
   ],
   exports: [
     PrimaryButtonComponent,
     LoadButtonComponent,
     ExpansivePanelComponent,
     ModalContentComponent,
-    NavigationComponent
+    NavigationComponent,
+    SearchInputComponent
   ],
   entryComponents: [ModalContentComponent]
 
