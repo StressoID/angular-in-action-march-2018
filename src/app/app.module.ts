@@ -10,18 +10,21 @@ import {SharedModule} from './shared/shared.module';
 import {CategoriesModule} from './categories/categories.module';
 import {LoginModule} from './login/login.module';
 import {AuthGuard} from './core/auth.guard';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HttpService} from './http.service';
 import { MyObservableComponent } from './my-observable/my-observable.component';
 import { MyFormComponent } from './my-form/my-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { HttpComponent } from './http/http.component';
+import {AuthInterceptor} from './auth.interceptor';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MyObservableComponent,
-    MyFormComponent
+    MyFormComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,11 @@ import {ReactiveFormsModule} from '@angular/forms';
     SharedModule,
     AppRoutingModule
   ],
-  providers: [AuthGuard, HttpService],
+  providers: [
+    AuthGuard,
+    HttpService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
